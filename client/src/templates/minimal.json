@@ -1,0 +1,21 @@
+{
+  "id": "minimal",
+  "label": "Minimal 极简",
+  "cssClass": "minimal",
+  "css": "",
+  "layout": "compact",
+  "sidebarSections": [],
+  "labels": {
+    "profile": "Summary",
+    "workExperience": "Work",
+    "projects": "Projects",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "currentText": "Now",
+  "profileOutput": "text",
+  "workOutput": "highlights",
+  "projectsOutput": "compact",
+  "educationOutput": "simple",
+  "skillsOutput": "flat"
+}

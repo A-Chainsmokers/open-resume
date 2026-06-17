@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+.env
+.env.*
+
+# FastAPI / local runtime
+*.log
+*.err
+
+# Node / Vite
+node_modules/
+dist/
+client/node_modules/
+client/dist/
+client/.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# opencode project config
+.opencode/

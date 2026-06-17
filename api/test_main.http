@@ -1,0 +1,59 @@
+### Health check
+GET http://127.0.0.1:8000/api/health
+Accept: application/json
+
+###
+
+### Export PDF
+POST http://127.0.0.1:8000/api/pdf/export
+Content-Type: application/json
+
+{
+  "template_id": "classic",
+  "resume": {
+    "profile": {
+      "name": "张三",
+      "gender": "男",
+      "age": "28",
+      "email": "zhangsan@example.com",
+      "workYears": "5年",
+      "headline": "高级前端工程师",
+      "expectedSalary": "25K-35K",
+      "expectedCity": "上海",
+      "avatar": "",
+      "summary": "<p>5年前端开发经验，精通React、Vue等主流框架。</p>"
+    },
+    "workExperience": [
+      {
+        "company": "字节跳动",
+        "position": "高级前端工程师",
+        "startDate": "2022-03",
+        "endDate": "",
+        "isCurrent": true,
+        "summary": "<ul><li>负责核心业务组件库开发</li><li>性能优化提升页面加载速度40%</li></ul>"
+      }
+    ],
+    "education": [
+      {
+        "school": "北京大学",
+        "degree": "本科",
+        "major": "计算机科学与技术",
+        "startDate": "2015-09",
+        "endDate": "2019-07",
+        "description": ["GPA 3.8/4.0", "优秀毕业生"]
+      }
+    ],
+    "skills": [
+      {
+        "category": "前端",
+        "items": [
+          {"name": "React", "level": "精通"},
+          {"name": "Vue", "level": "熟练"}
+        ]
+      }
+    ],
+    "settings": {
+      "sectionOrder": ["profile", "workExperience", "education", "skills"]
+    }
+  }
+}

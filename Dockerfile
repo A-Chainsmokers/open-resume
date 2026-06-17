@@ -1,0 +1,32 @@
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/node:20-alpine AS frontend
+
+WORKDIR /app
+COPY client/package.json client/package-lock.json ./
+RUN npm ci
+COPY client/vite.config.ts client/tsconfig.json ./
+COPY client/index.html ./
+COPY client/src ./src
+RUN npm run build
+
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.12-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 \
+    libdrm2 libdbus-1-3 libexpat1 libxcb1 libxkbcommon0 \
+    libx11-6 libxcomposite1 libxdamage1 libxext6 libxfixes3 \
+    libxrandr2 libgbm1 libpango-1.0-0 libcairo2 \
+    libasound2 libatspi2.0-0 libwayland-client0 libwayland-egl1 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY api/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m playwright install chromium && rm -rf /root/.cache
+
+COPY api/ .
+COPY --from=frontend /app/dist /client/dist
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

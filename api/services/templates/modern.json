@@ -1,0 +1,21 @@
+{
+  "id": "modern",
+  "label": "Modern 现代",
+  "cssClass": "modern",
+  "css": "",
+  "layout": "sidebar",
+  "sidebarSections": ["skills"],
+  "labels": {
+    "profile": "Profile",
+    "workExperience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "currentText": "至今",
+  "profileOutput": "text",
+  "workOutput": "highlights",
+  "projectsOutput": "list",
+  "educationOutput": "simple",
+  "skillsOutput": "flat"
+}

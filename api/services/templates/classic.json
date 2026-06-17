@@ -1,0 +1,21 @@
+{
+  "id": "classic",
+  "label": "Classic 经典",
+  "cssClass": "classic",
+  "css": "",
+  "layout": "center",
+  "sidebarSections": [],
+  "labels": {
+    "profile": "个人优势",
+    "workExperience": "工作经历",
+    "projects": "项目经历",
+    "education": "教育经历",
+    "skills": "技能"
+  },
+  "currentText": "至今",
+  "profileOutput": "rich",
+  "workOutput": "rich",
+  "projectsOutput": "rich",
+  "educationOutput": "detailed",
+  "skillsOutput": "with-level"
+}
